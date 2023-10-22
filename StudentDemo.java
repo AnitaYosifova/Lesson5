@@ -1,19 +1,37 @@
-public class StudentDemo {
+public class Demo {
 	public static void main(String[] args) {
-		Student maria = new Student("Maria", "Informatics", 21);
-		Student peter = new Student("Peter", "Mathematics", 19);
-		Student georgi = new Student("Georgi", "Informatics", 18);
+		Computer hp = new Computer();
+		System.out.println(hp.operationSystem);
+		hp.price = 1000.5;
 		
-		System.out.println("Maria year in college: " + maria.yearInCollage);
+		Computer dell = new Computer(2012, 2000, true, 500, 500, "Linux");
 		
-		for (int i = 0; i < 5; i++) {
-			maria.upYear();
+		int result = dell.comparePrice(hp);
+//		if(result == -1) {
+//			System.out.println("Dell is more expensive than hp");
+//		} else {
+//			if(result == 1) {
+//				System.out.println("Dell is NOT more expensive than hp");
+//			} else {
+//				System.out.println("The computer have equals prices");
+//			}
+//		}
+		
+		
+		switch (result) {
+			case -1:
+				System.out.println("Dell is more expensive than hp");
+				break;
+			case 1:
+				System.out.println("Dell is NOT more expensive than hp");
+				break;
+			case 0:
+				System.out.println("The computer have equals prices");
+				break;
+			default:
+				System.out.println("Error !");
+				break;
 		}
 		
-		System.out.println("Maria year in college: " + maria.yearInCollage);
-		
-		System.out.println("Maria money: " + maria.money);
-		maria.receiveScholarship(3, 200);
-		System.out.println("Maria money: " + maria.money);
 	}
 }
