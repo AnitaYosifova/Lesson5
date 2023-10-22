@@ -39,3 +39,4 @@ public class Student {
 		return money;
 	}
 }
+
